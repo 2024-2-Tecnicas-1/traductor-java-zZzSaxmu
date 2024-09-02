@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class TraductorJava {
-    // Inicialización de los HashMap como estáticos
+
     private static final HashMap<Integer, String> numerosESP = new HashMap<>();
     private static final HashMap<Integer, String> numerosENG = new HashMap<>();
 
     static {
-        // Inicialización de los HashMap
+        
         numerosESP.put(1, "uno");                 
         numerosESP.put(2, "dos");                 
         numerosESP.put(3, "tres");                 
@@ -229,9 +229,12 @@ public class TraductorJava {
             String num2ESP = numerosESP.getOrDefault(num2, "Numero no disponible");
             String sumaESP = numerosESP.getOrDefault(suma, "Numero no disponible");
 
-            String num1ENG = numerosENG.getOrDefault(args, sumaESP)
+            String num1ENG = numerosENG.getOrDefault(num1, "Wrong number");
+            String num2ENG = numerosENG.getOrDefault(num2, "Wrong number");
+            String sumaENG = numerosENG.getOrDefault(suma, "Wrong number");
 
             System.out.println("La suma de " + num1ESP + " más " + num2ESP + " es " + sumaESP);
+            System.out.println("The sum of " + num1ENG + " plus "  + num2ENG + " is "+ sumaENG);
         }
     }
 }
